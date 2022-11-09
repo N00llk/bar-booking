@@ -41,6 +41,6 @@ void MainWindow::onAuthorizationSuccess(UserType userType)
 
 void MainWindow::onAuthorizationFail()
 {
-    QMessageBox::critical(this, "Ошибка входа", "Невыерные логин или пароль!");
+    QMessageBox::critical(this, "Ошибка входа", "Неверные логин или пароль!");
 }
 
