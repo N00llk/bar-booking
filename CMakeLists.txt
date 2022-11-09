@@ -43,6 +43,11 @@ set(PROJECT_SOURCES
         Forms/FormsBar/FormCreateBar.h
         Forms/FormsBar/FormCreateBar.cpp
         Forms/FormsBar/FormCreateBar.ui
+        Forms/FormsRegistration/FormRegistration.h
+        Forms/FormsRegistration/FormRegistration.cpp
+        Forms/FormsRegistration/FormRegistration.ui
+        Common/Styles/bar-booking.qss
+        Common/Styles/Styles.qrc
 )
 
 include_directories(Forms/)

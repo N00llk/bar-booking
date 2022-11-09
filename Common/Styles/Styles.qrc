@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/styles">
+        <file>bar-booking.qss</file>
+    </qresource>
+</RCC>

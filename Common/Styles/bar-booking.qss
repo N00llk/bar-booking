@@ -1,0 +1,10 @@
+QMainWindow
+{
+    background: qlineargradient(spread:repeat, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(209, 187, 236, 255), stop:1 rgba(206, 248, 225, 255))
+}
+
+QLineEdit 
+{ 
+    border-radius: 5px;
+    box-shadow: rgba(0,0,0,0.4) 10px 10px; 
+}

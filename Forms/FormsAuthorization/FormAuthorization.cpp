@@ -1,6 +1,8 @@
 #include "FormAuthorization.h"
 #include "ui_FormAuthorization.h"
 
+#include <QGraphicsDropShadowEffect>
+
 FormAuthorization::FormAuthorization(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::FormAuthorization)
@@ -8,6 +10,13 @@ FormAuthorization::FormAuthorization(QWidget *parent) :
     ui->setupUi(this);
 
     connect(ui->enterPushButton, &QPushButton::pressed, this, &FormAuthorization::onEnterPressed);
+
+    QGraphicsDropShadowEffect* effect = new QGraphicsDropShadowEffect();
+    effect->setBlurRadius(1);
+    effect->setOffset(3,3);
+
+    ui->loginLineEdit->setGraphicsEffect(effect);
+    ui->passwordLineEdit->setGraphicsEffect(effect);
 }
 
 FormAuthorization::~FormAuthorization()
