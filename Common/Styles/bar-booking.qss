@@ -6,5 +6,37 @@ QMainWindow
 QLineEdit 
 { 
     border-radius: 5px;
-    box-shadow: rgba(0,0,0,0.4) 10px 10px; 
+    font: 10pt "Roboto";
+    color: #79847E;
+    min-width: 10em;
+    padding: 6px;
+}
+
+QPushButton#enterPushButton
+{
+    border-radius: 5px;
+    font: 11pt "Roboto";
+    background-color: #c3f9df;
+    color: #4b4d4c;
+    min-width: 10em;
+    padding: 6px;
+}
+
+QComboBox
+{
+    border-radius: 5px;
+    font: 10pt "Roboto";
+    color: #79847E;
+    min-width: 10em;
+    padding: 6px;
+}
+
+QLabel
+{
+    text-align: center;
+}
+
+Line
+{
+    color: #d5baf0
 }

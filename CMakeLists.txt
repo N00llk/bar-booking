@@ -11,8 +11,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Network)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network)
 
 if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/bin/linux_x64/${CMAKE_BUILD_TYPE})
@@ -48,9 +48,13 @@ set(PROJECT_SOURCES
         Forms/FormsRegistration/FormRegistration.ui
         Common/Styles/bar-booking.qss
         Common/Styles/Styles.qrc
+        DataTransfer/ServerTransport.h
+        DataTransfer/ServerTransport.cpp
+        DataTransfer/ITransport.h
 )
 
 include_directories(Forms/)
+include_directories(DataTransfer/)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(bar-booking
@@ -75,7 +79,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(bar-booking PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(bar-booking PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Network)
 
 set_target_properties(bar-booking PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
