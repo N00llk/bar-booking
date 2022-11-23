@@ -7,9 +7,9 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-enum class UserType;
 class FormAuthorization;
 class FormRegistration;
+class FormBarView;
 
 class MainWindow : public QMainWindow
 {
@@ -25,11 +25,15 @@ private:
     Ui::MainWindow *ui;
     FormAuthorization* m_authorizationForm;
     FormRegistration* m_registrationForm;
+    FormBarView* m_barViewForm;
     ServerTransport m_transport;
+    User m_activeUser;
 
 private slots:
-    void onAuthorizationSuccess(UserType userType);
+    void onAuthorizationSuccess(User::RoleEnum role, QString accessToken, QString refreshToken);
     void onAuthorizationFail(void);
+    void onRegistrationSuccess(void);
+    void onRegistrationFail(void);
     void onRegistrationRequested(void);
     void onAuthorizationRequested(void);
 };

@@ -2,4 +2,7 @@
     <qresource prefix="/styles">
         <file>bar-booking.qss</file>
     </qresource>
+    <qresource prefix="/images">
+        <file>user-profile.png</file>
+    </qresource>
 </RCC>

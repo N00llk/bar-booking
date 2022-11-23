@@ -3,6 +3,7 @@
 
 #include <QGraphicsDropShadowEffect>
 #include <QNetworkReply>
+#include <QJsonDocument>
 
 FormAuthorization::FormAuthorization(ITransport &transport, QWidget *parent) :
     QWidget(parent),
@@ -48,17 +49,18 @@ void FormAuthorization::onLoginReply(QNetworkReply *reply)
 {
     qDebug() << reply->error() << static_cast<int>(reply->error());
 
-//    switch(reply->error())
-//    if (loginStr.length() > 4)
-//    {
-//        emit authorizationSuccess(UserType::Owner);
-//    }
-//    else if (loginStr.length() > 3)
-//    {
-//        emit authorizationSuccess(UserType::Manager);
-//    }
-//    else
-//    {
-//        emit authorizationFail();
-//    }
+    switch(reply->error())
+    {
+    case QNetworkReply::NetworkError::NoError:
+    {
+        QJsonDocument replyData = QJsonDocument::fromJson(reply->readAll());
+        emit authorizationSuccess(static_cast<User::RoleEnum>(replyData["role"].toInt()), replyData["access_token"].toString(), replyData["refresh_token"].toString());
+        break;
+    }
+    default:
+    {
+        emit authorizationFail();
+        break;
+    }
+    }
 }

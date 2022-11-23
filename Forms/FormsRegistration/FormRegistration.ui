@@ -67,7 +67,7 @@
         <widget class="QLineEdit" name="surnameLineEdit"/>
        </item>
        <item>
-        <widget class="QLineEdit" name="loginLineEdit"/>
+        <widget class="QLineEdit" name="emailLineEdit"/>
        </item>
        <item>
         <widget class="QLineEdit" name="passwordLineEdit"/>
@@ -93,7 +93,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="registrationPushButton">
          <property name="text">
           <string>Зарегистрироваться</string>
          </property>

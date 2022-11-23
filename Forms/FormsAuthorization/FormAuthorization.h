@@ -4,12 +4,6 @@
 
 #include "ITransport.h"
 
-enum class UserType
-{
-    Owner,
-    Manager
-};
-
 namespace Ui {
 class FormAuthorization;
 }
@@ -27,7 +21,7 @@ private:
     ITransport& m_transport;
 
 signals:
-    void authorizationSuccess(UserType userType);
+    void authorizationSuccess(User::RoleEnum userType, QString accessToken, QString refreshToken);
     void authorizationFail(void);
     void registrationRequested(void);
 

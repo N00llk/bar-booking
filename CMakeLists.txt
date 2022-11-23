@@ -29,29 +29,17 @@ endif()
 
 file(MAKE_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 
-set(PROJECT_SOURCES
-        main.cpp
-        MainWindow.cpp
-        MainWindow.h
-        MainWindow.ui
-        Forms/FormsAuthorization/FormAuthorization.h
-        Forms/FormsAuthorization/FormAuthorization.cpp
-        Forms/FormsAuthorization/FormAuthorization.ui
-        Forms/FormsOwner/FormOwner.h
-        Forms/FormsOwner/FormOwner.cpp
-        Forms/FormsOwner/FormOwner.ui
-        Forms/FormsBar/FormCreateBar.h
-        Forms/FormsBar/FormCreateBar.cpp
-        Forms/FormsBar/FormCreateBar.ui
-        Forms/FormsRegistration/FormRegistration.h
-        Forms/FormsRegistration/FormRegistration.cpp
-        Forms/FormsRegistration/FormRegistration.ui
-        Common/Styles/bar-booking.qss
-        Common/Styles/Styles.qrc
-        DataTransfer/ServerTransport.h
-        DataTransfer/ServerTransport.cpp
-        DataTransfer/ITransport.h
+file(GLOB_RECURSE sources CONFIGURE_DEPENDS
+     "*.h"
+     "*.cpp"
+     "*.qss"
+     "*.qrc"
+     "*.ui"
 )
+
+message(STATUS "Souces list:" ${sources})
+
+set(PROJECT_SOURCES ${sources})
 
 include_directories(Forms/)
 include_directories(DataTransfer/)
