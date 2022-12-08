@@ -26,8 +26,6 @@ void ServerTransport::requestLoginUser(const QObject *sender, const char *sender
     QJsonDocument doc(obj);
     QByteArray requestBody = doc.toJson(QJsonDocument::Compact);
 
-    qDebug() << requestBody;
-
     connect(m_netManager, SIGNAL(finished(QNetworkReply*)), sender, senderSlot, Qt::ConnectionType::SingleShotConnection);
 
     m_netManager->post(request, requestBody);

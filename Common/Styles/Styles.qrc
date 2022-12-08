@@ -4,5 +4,6 @@
     </qresource>
     <qresource prefix="/images">
         <file>user-profile.png</file>
+        <file>bar-template.jpg</file>
     </qresource>
 </RCC>

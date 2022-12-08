@@ -7,6 +7,7 @@
 #include <FormsRegistration/FormRegistration.h>
 #include <FormsBarView/FormBarView.h>
 #include <FormsOwner/FormOwner.h>
+#include <FormsBar/FormCreateBar.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -17,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_authorizationForm = new FormAuthorization(m_transport);
     m_registrationForm = new FormRegistration(m_transport);
     m_barViewForm = new FormBarView(m_transport, m_activeUser);
+    m_createBarForm = new FormCreateBar();
 
     connect(m_authorizationForm, &FormAuthorization::authorizationSuccess, this, &MainWindow::onAuthorizationSuccess);
     connect(m_authorizationForm, &FormAuthorization::authorizationFail, this, &MainWindow::onAuthorizationFail);
@@ -26,10 +28,14 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(m_authorizationForm, &FormAuthorization::registrationRequested, this, &MainWindow::onRegistrationRequested);
     connect(m_registrationForm, &FormRegistration::authorizationRequested, this, &MainWindow::onAuthorizationRequested);
+    connect(m_barViewForm, &FormBarView::barCreationRequested, this, &MainWindow::onBarCreationRequested);
+    connect(m_createBarForm, &FormCreateBar::barCreationSuccess, this, &MainWindow::onBarCreationSuccess);
+    connect(m_createBarForm, &FormCreateBar::barCreationCanceled, this, &MainWindow::onBarCreationCanceled);
 
     ui->stackedWidget->addWidget(m_authorizationForm);
     ui->stackedWidget->addWidget(m_registrationForm);
     ui->stackedWidget->addWidget(m_barViewForm);
+    ui->stackedWidget->addWidget(m_createBarForm);
 
     ui->stackedWidget->setCurrentWidget(m_authorizationForm);
 }
@@ -41,7 +47,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::onAuthorizationSuccess(User::RoleEnum role, QString accessToken, QString refreshToken)
 {
-    qDebug() << __FUNCTION__ << (int)role << accessToken << refreshToken;
+    qDebug() << __FUNCTION__;
     m_activeUser.create(role, accessToken, refreshToken);
     ui->stackedWidget->setCurrentWidget(m_barViewForm);
 }
@@ -71,5 +77,21 @@ void MainWindow::onAuthorizationRequested()
 {
     qDebug() << __FUNCTION__;
     ui->stackedWidget->setCurrentWidget(m_authorizationForm);
+}
+
+void MainWindow::onBarCreationRequested()
+{
+    qDebug() << __FUNCTION__;
+    ui->stackedWidget->setCurrentWidget(m_createBarForm);
+}
+
+void MainWindow::onBarCreationCanceled()
+{
+    ui->stackedWidget->setCurrentWidget(m_barViewForm);
+}
+
+void MainWindow::onBarCreationSuccess()
+{
+    ui->stackedWidget->setCurrentWidget(m_barViewForm);
 }
 

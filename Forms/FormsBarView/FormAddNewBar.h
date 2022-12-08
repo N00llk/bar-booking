@@ -14,6 +14,9 @@ public:
     explicit FormAddNewBar(QWidget *parent = nullptr);
     ~FormAddNewBar();
 
+signals:
+    void barCreationRequested(void);
+
 private:
     Ui::FormAddNewBar *ui;
 };

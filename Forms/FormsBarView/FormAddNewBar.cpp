@@ -6,6 +6,8 @@ FormAddNewBar::FormAddNewBar(QWidget *parent) :
     ui(new Ui::FormAddNewBar)
 {
     ui->setupUi(this);
+
+    connect(ui->addNewBarLabel, &QLabel::linkActivated, this, &FormAddNewBar::barCreationRequested);
 }
 
 FormAddNewBar::~FormAddNewBar()

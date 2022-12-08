@@ -14,6 +14,10 @@ public:
     explicit FormCreateBar(QWidget *parent = nullptr);
     ~FormCreateBar();
 
+signals:
+    void barCreationCanceled();
+    void barCreationSuccess();
+
 private:
     Ui::FormCreateBar *ui;
 };
