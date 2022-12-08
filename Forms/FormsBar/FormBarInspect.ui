@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>403</width>
+    <width>521</width>
     <height>324</height>
    </rect>
   </property>
@@ -111,7 +111,7 @@
         <item row="2" column="0">
          <widget class="QPushButton" name="pushButton">
           <property name="text">
-           <string>PushButton</string>
+           <string>Журнал брони</string>
           </property>
          </widget>
         </item>
@@ -125,7 +125,7 @@
         <item row="2" column="1">
          <widget class="QPushButton" name="pushButton_2">
           <property name="text">
-           <string>PushButton</string>
+           <string>Редактировать</string>
           </property>
          </widget>
         </item>
@@ -139,14 +139,14 @@
         <item row="3" column="0">
          <widget class="QPushButton" name="pushButton_3">
           <property name="text">
-           <string>PushButton</string>
+           <string>Отзывы о баре</string>
           </property>
          </widget>
         </item>
         <item row="3" column="1">
          <widget class="QPushButton" name="pushButton_4">
           <property name="text">
-           <string>PushButton</string>
+           <string>Я сотрудник бара</string>
           </property>
          </widget>
         </item>
