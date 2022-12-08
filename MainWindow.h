@@ -11,6 +11,7 @@ class FormAuthorization;
 class FormRegistration;
 class FormBarView;
 class FormCreateBar;
+class FormBarInspect;
 
 class MainWindow : public QMainWindow
 {
@@ -28,6 +29,7 @@ private:
     FormRegistration* m_registrationForm;
     FormBarView* m_barViewForm;
     FormCreateBar* m_createBarForm;
+    FormBarInspect* m_barInspectForm;
     ServerTransport m_transport;
     User m_activeUser;
 
@@ -39,6 +41,7 @@ private slots:
     void onRegistrationRequested(void);
     void onAuthorizationRequested(void);
     void onBarCreationRequested(void);
+    void onBarOpeningRequested(const Bar& bar);
     void onBarCreationCanceled(void);
     void onBarCreationSuccess(void);
 };

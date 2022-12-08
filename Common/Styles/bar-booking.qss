@@ -12,13 +12,22 @@ QLineEdit
     padding: 6px;
 }
 
-QPushButton#enterPushButton, QPushButton#registrationPushButton, QPushButton#addBarPushButton, QPushButton#cancelBarAddpushButton, QPushButton#barOpenPushButton
+QPushButton#enterPushButton, QPushButton#registrationPushButton, QPushButton#addBarPushButton, QPushButton#cancelBarAddpushButton
 {
     border-radius: 5px;
     font: 11pt "Roboto";
     background-color: #a8e3c2;
     color: #4b4d4c;
     min-width: 10em;
+    padding: 6px;
+}
+
+QPushButton#barOpenPushButton
+{
+    border-radius: 5px;
+    font: 11pt "Roboto";
+    background-color: #a8e3c2;
+    color: #4b4d4c;
     padding: 6px;
 }
 
@@ -36,9 +45,21 @@ QWidget#m_addNewBarForm
     border-radius: 5px;
 }
 
-FormBarSmallPreview
+QScrollArea
 {
-    border-radius: 10px;
+    background: transparent;
+}
+
+QScrollArea > QWidget > QWidget
+{
+    background: transparent;
+}
+
+QScrollArea > QWidget > QScrollBar
+{
+    background: palette(base);
+    height: 0px;
+    width: 0px;
 }
 
 QWidget#BarInfoWidget
@@ -49,7 +70,16 @@ QWidget#BarInfoWidget
 
 QWidget#SmallBarInfoWidget
 {
-    background-color: #FFFFFF;
+    background: #FFFFFF;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+QWidget#BarImageWidget
+{
+    background: #FFFFFF;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 QComboBox
@@ -64,6 +94,19 @@ QComboBox
 QLabel
 {
     text-align: center;
+}
+
+QLabel#barNameLabel
+{
+    font-weight: bold;
+    font: 20pt "Roboto";
+    color: #79847E; 
+}
+
+QLabel#barAddressLabel
+{
+    font: 10pt "Roboto";
+    color: #79847E; 
 }
 
 Line

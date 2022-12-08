@@ -20,11 +20,13 @@ public:
 
 signals:
     void barCreationRequested(void);
+    void barOpenRequested(const Bar& bar);
 
 private:
-    FormAddNewBar* m_addNewBarForm;
-    Ui::FormBarView *ui;
-    ITransport& m_transport;
-    const User& m_activeUser;
+    FormAddNewBar*      m_addNewBarForm;
+    Ui::FormBarView*    ui;
+    ITransport&         m_transport;
+    const User&         m_activeUser;
+    QVector<Bar>        m_barList;
 };
 

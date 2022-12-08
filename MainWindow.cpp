@@ -8,6 +8,7 @@
 #include <FormsBarView/FormBarView.h>
 #include <FormsOwner/FormOwner.h>
 #include <FormsBar/FormCreateBar.h>
+#include <FormsBar/FormBarInspect.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -19,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_registrationForm = new FormRegistration(m_transport);
     m_barViewForm = new FormBarView(m_transport, m_activeUser);
     m_createBarForm = new FormCreateBar();
+    m_barInspectForm = new FormBarInspect();
 
     connect(m_authorizationForm, &FormAuthorization::authorizationSuccess, this, &MainWindow::onAuthorizationSuccess);
     connect(m_authorizationForm, &FormAuthorization::authorizationFail, this, &MainWindow::onAuthorizationFail);
@@ -29,6 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_authorizationForm, &FormAuthorization::registrationRequested, this, &MainWindow::onRegistrationRequested);
     connect(m_registrationForm, &FormRegistration::authorizationRequested, this, &MainWindow::onAuthorizationRequested);
     connect(m_barViewForm, &FormBarView::barCreationRequested, this, &MainWindow::onBarCreationRequested);
+    connect(m_barViewForm, &FormBarView::barOpenRequested, this, &MainWindow::onBarOpeningRequested);
     connect(m_createBarForm, &FormCreateBar::barCreationSuccess, this, &MainWindow::onBarCreationSuccess);
     connect(m_createBarForm, &FormCreateBar::barCreationCanceled, this, &MainWindow::onBarCreationCanceled);
 
@@ -36,6 +39,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->stackedWidget->addWidget(m_registrationForm);
     ui->stackedWidget->addWidget(m_barViewForm);
     ui->stackedWidget->addWidget(m_createBarForm);
+    ui->stackedWidget->addWidget(m_barInspectForm);
 
     ui->stackedWidget->setCurrentWidget(m_authorizationForm);
 }
@@ -83,6 +87,12 @@ void MainWindow::onBarCreationRequested()
 {
     qDebug() << __FUNCTION__;
     ui->stackedWidget->setCurrentWidget(m_createBarForm);
+}
+
+void MainWindow::onBarOpeningRequested(const Bar &bar)
+{
+    qDebug() << __FUNCTION__;
+    ui->stackedWidget->setCurrentWidget(m_barInspectForm);
 }
 
 void MainWindow::onBarCreationCanceled()

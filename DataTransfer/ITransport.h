@@ -3,6 +3,7 @@
 #include <QObject>
 #include <QNetworkAccessManager>
 #include <User.h>
+#include <Bar.h>
 
 class ITransport
 {

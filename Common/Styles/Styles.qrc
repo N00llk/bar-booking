@@ -5,5 +5,8 @@
     <qresource prefix="/images">
         <file>user-profile.png</file>
         <file>bar-template.jpg</file>
+        <file>bar-gitano.jpg</file>
+        <file>bar-arka.jpeg</file>
+        <file>bar-history.jpg</file>
     </qresource>
 </RCC>
