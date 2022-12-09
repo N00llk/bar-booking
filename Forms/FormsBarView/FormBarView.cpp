@@ -17,6 +17,11 @@ FormBarView::FormBarView(ITransport &transport, User& activeUser, QWidget *paren
     m_barList.append(Bar("History club", "Конюшенная пл, 2в", QPixmap(":/images/bar-history.jpg")));
     m_barList.append(Bar("Gitano", "Садовая ул, 12", QPixmap(":/images/bar-gitano.jpg")));
 
+    QIcon userProfileIcon(QPixmap(":/images/user-profile.png"));
+
+    ui->userProfileToolButton->setIcon(userProfileIcon);
+    ui->userProfileToolButton->setIconSize(QSize(40, 40));
+
     connect(m_addNewBarForm, &FormAddNewBar::barCreationRequested, this, &FormBarView::barCreationRequested);
 
     for (const Bar& bar: m_barList)

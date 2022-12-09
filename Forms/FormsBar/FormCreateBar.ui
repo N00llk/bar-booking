@@ -82,20 +82,10 @@
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_2">
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_7">
             <property name="text">
-             <string>Наименование</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLineEdit" name="barNameLineEdit">
-            <property name="inputMask">
-             <string/>
-            </property>
-            <property name="text">
-             <string/>
+             <string>E-mail</string>
             </property>
            </widget>
           </item>
@@ -116,10 +106,40 @@
             </property>
            </widget>
           </item>
+          <item row="4" column="1">
+           <widget class="QPlainTextEdit" name="descriptionPlainTextEdit"/>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="barNameLineEdit">
+            <property name="inputMask">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="emailLineEdit">
+            <property name="inputMask">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
           <item row="2" column="0">
            <widget class="QLabel" name="label_5">
             <property name="text">
              <string>Телефон</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Категории</string>
             </property>
            </widget>
           </item>
@@ -133,36 +153,32 @@
             </property>
            </widget>
           </item>
-          <item row="3" column="0">
+          <item row="4" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Описание</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Наименование</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
            <widget class="QLabel" name="label_6">
             <property name="text">
-             <string>Сеть</string>
+             <string>Кухня</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="1">
-           <widget class="QLineEdit" name="barNetLineEdit">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
+          <item row="5" column="1">
+           <widget class="QLineEdit" name="categoryLineEdit"/>
           </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="label_7">
-            <property name="text">
-             <string>E-mail</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QLineEdit" name="emailLineEdit">
-            <property name="inputMask">
-             <string/>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
+          <item row="6" column="1">
+           <widget class="QLineEdit" name="kitchenLineEdit"/>
           </item>
          </layout>
         </item>
@@ -182,16 +198,9 @@
            </spacer>
           </item>
           <item>
-           <widget class="QLabel" name="createTableSchemeLabel">
-            <property name="text">
-             <string>Создать схему рассадки</string>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="QLabel" name="createBarWorkTimeLabel">
             <property name="text">
-             <string>Создать расписание работы</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;left&quot;&gt;&lt;a href=&quot;whatever&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#094fd1;&quot;&gt;Создать расписание работы&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -213,7 +222,7 @@
           <item>
            <widget class="QLabel" name="label_9">
             <property name="text">
-             <string>Добавить фото бара</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;whatever&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#094fd1;&quot;&gt;Добавить фото бара&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -264,7 +273,7 @@
           <item>
            <widget class="QLabel" name="label_11">
             <property name="text">
-             <string>Добавить меню</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;whatever&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#094fd1;&quot;&gt;Добавить меню&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -293,7 +302,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>232</width>
+             <width>153</width>
              <height>76</height>
             </rect>
            </property>

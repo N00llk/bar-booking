@@ -10,8 +10,10 @@ FormCreateBar::FormCreateBar(QWidget *parent) :
     ui->barNameLineEdit->setPlaceholderText("@New_bar");
     ui->addressLineEdit->setPlaceholderText("@Санкт-Петербург");
     ui->phoneNumberLineEdit->setPlaceholderText("0000000000");
-    ui->barNetLineEdit->setPlaceholderText("@сеть_баров");
-    ui->emailLineEdit->setPlaceholderText("-");
+    ui->kitchenLineEdit->setPlaceholderText("@Кухня");
+    ui->categoryLineEdit->setPlaceholderText("@Категория");
+    ui->descriptionPlainTextEdit->setPlaceholderText("@Описание");
+    ui->emailLineEdit->setPlaceholderText("@email");
 
     connect(ui->cancelBarAddpushButton, &QPushButton::clicked, this, &FormCreateBar::barCreationCanceled);
 }
